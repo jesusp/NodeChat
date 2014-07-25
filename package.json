@@ -1,0 +1,32 @@
+{
+    "name": "SummerTalks",
+    "version": "1.0.0",
+    "description": "SummerTalks nodeapp workshop",
+    "author": {
+        "name": "Jesus Martinez",
+        "email": "jmartinez@nearsoft.com",
+        "url": "http://www.nearsoft.com/"
+    },
+    "homepage": "http://www.nearsoft.com/",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/openshift/origin-server"
+    },
+
+    "engines": {
+        "node": ">= 0.6.0",
+        "npm": ">= 1.0.0"
+    },
+
+    "dependencies": {
+        "express": "~3.4.4",
+        "ejs": "1.x",
+        "ejs-locals": "1.x",
+        "socket.io": "1.x"
+    },
+    "devDependencies": {},
+    "bundleDependencies": [],
+
+    "private": true,
+    "main": "server.js"
+}

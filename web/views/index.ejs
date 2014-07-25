@@ -1,0 +1,50 @@
+<% layout('layout') -%>
+<ng-view></ng-view>
+<script type="text/ng-template" id="login">
+  <div class="well">
+    <h2>Enter Username</h2>
+    <div class="login-action">
+      <div class="nickname-wrapper">
+        <input type="text" ng-model="user" ng-enter="login(user)" class="form-control">
+      </div>
+        <div class="alert alert-danger" ng-show="error">Invalid User</div>
+      <div>
+        <button type="button" ng-click="login(user)" class="btn btn-default">Enter</button>
+      </div>
+    </div>
+  </div>
+</script>
+<script type="text/ng-template" id="chat-box">
+  <div class="row">
+    <div class="col-sm-9 col-md-10 main">
+      <h1 class="page-header">Chat</h1>
+      <div class="panel panel-default chat">
+        <div class="panel-body">
+          <div class="row chat-entry" ng-repeat="message in messages">
+            <div class="col-sm-1 user-nickname">{{message.user}}</div>
+            <div class="col-sm-11 user-message">{{message.message}}</div>
+          </div>
+          
+        </div>
+        <div class="panel-footer">
+          <div class="input-group">
+            <span class="input-group-addon">{{user}}</span>
+            <input type="text" ng-enter="sendMessage(message)" ng-model="message" class="form-control">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-2 sidebar">
+      <div class="panel panel-default">
+        <div class="panel-heading">Users</div>
+        <div class="panel-body">
+          <ul class="list-group">
+            <li class="list-group-item" ng-repeat="user in users">
+              <span class="glyphicon glyphicon-user"></span><span class="username">{{user}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
